@@ -17,6 +17,7 @@
 		82023A541D729F7100B09032 /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82023A531D729F7100B09032 /* NextButton.swift */; };
 		82023A561D729FA000B09032 /* UITextField+RxSwiftExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82023A551D729FA000B09032 /* UITextField+RxSwiftExample.swift */; };
 		82023A581D72A71600B09032 /* CreatePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82023A571D72A71600B09032 /* CreatePasswordViewModel.swift */; };
+		823D3B791D72AA3B00624F15 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823D3B781D72AA3B00624F15 /* KeyboardManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		82023A531D729F7100B09032 /* NextButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
 		82023A551D729FA000B09032 /* UITextField+RxSwiftExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+RxSwiftExample.swift"; sourceTree = "<group>"; };
 		82023A571D72A71600B09032 /* CreatePasswordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePasswordViewModel.swift; sourceTree = "<group>"; };
+		823D3B781D72AA3B00624F15 /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				82023A251D72938600B09032 /* AppDelegate.swift */,
 				82023A271D72938600B09032 /* CreatePasswordViewController.swift */,
 				82023A571D72A71600B09032 /* CreatePasswordViewModel.swift */,
+				823D3B781D72AA3B00624F15 /* KeyboardManager.swift */,
 				82023A551D729FA000B09032 /* UITextField+RxSwiftExample.swift */,
 				82023A531D729F7100B09032 /* NextButton.swift */,
 				82023A291D72938600B09032 /* Main.storyboard */,
@@ -268,6 +271,7 @@
 			files = (
 				82023A541D729F7100B09032 /* NextButton.swift in Sources */,
 				82023A281D72938600B09032 /* CreatePasswordViewController.swift in Sources */,
+				823D3B791D72AA3B00624F15 /* KeyboardManager.swift in Sources */,
 				82023A561D729FA000B09032 /* UITextField+RxSwiftExample.swift in Sources */,
 				82023A581D72A71600B09032 /* CreatePasswordViewModel.swift in Sources */,
 				82023A261D72938600B09032 /* AppDelegate.swift in Sources */,
@@ -499,6 +503,7 @@
 				82023A4C1D72938600B09032 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		82023A4D1D72938600B09032 /* Build configuration list for PBXNativeTarget "RxSwiftExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +512,7 @@
 				82023A4F1D72938600B09032 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		82023A501D72938600B09032 /* Build configuration list for PBXNativeTarget "RxSwiftExampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +521,7 @@
 				82023A521D72938600B09032 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
