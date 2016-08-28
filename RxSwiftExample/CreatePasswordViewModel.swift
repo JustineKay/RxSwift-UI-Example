@@ -7,7 +7,34 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
-class CreatePasswordViewModel {
+final class CreatePasswordViewModel: NSObject {
     
+    let password = Variable("")
+    let passwordIsValid = Variable(false)
+    let passwordConfirmation = Variable("")
+    var passwordIsMinLength = Variable(false)
+    
+    let passwordMinLength = 8
+    let disposeBag = DisposeBag()
+    
+    var passwordsMatchObservable: Observable<Bool>? = nil
+    
+    override init() {
+        super.init()
+        
+        passwordsMatchObservable = Observable.combineLatest(password.asObservable(), passwordConfirmation.asObservable()) { $0 == $1 }
+        
+        password.asObservable().subscribeNext() { password in
+            self.passwordIsMinLength.value = password.characters.count >= self.passwordMinLength
+            }
+            .addDisposableTo(disposeBag)
+        
+        password.asObservable().subscribeNext() { password in
+            self.passwordIsValid.value = password.isEmpty == false
+            }
+            .addDisposableTo(disposeBag)
+    }
 }
