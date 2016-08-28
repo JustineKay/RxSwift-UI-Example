@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		82023A261D72938600B09032 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82023A251D72938600B09032 /* AppDelegate.swift */; };
-		82023A281D72938600B09032 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82023A271D72938600B09032 /* ViewController.swift */; };
+		82023A281D72938600B09032 /* CreatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82023A271D72938600B09032 /* CreatePasswordViewController.swift */; };
 		82023A2B1D72938600B09032 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82023A291D72938600B09032 /* Main.storyboard */; };
 		82023A2D1D72938600B09032 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82023A2C1D72938600B09032 /* Assets.xcassets */; };
 		82023A301D72938600B09032 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82023A2E1D72938600B09032 /* LaunchScreen.storyboard */; };
 		82023A3B1D72938600B09032 /* RxSwiftExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82023A3A1D72938600B09032 /* RxSwiftExampleTests.swift */; };
 		82023A461D72938600B09032 /* RxSwiftExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82023A451D72938600B09032 /* RxSwiftExampleUITests.swift */; };
+		82023A541D729F7100B09032 /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82023A531D729F7100B09032 /* NextButton.swift */; };
+		82023A561D729FA000B09032 /* UITextField+RxSwiftExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82023A551D729FA000B09032 /* UITextField+RxSwiftExample.swift */; };
+		82023A581D72A71600B09032 /* CreatePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82023A571D72A71600B09032 /* CreatePasswordViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,7 @@
 /* Begin PBXFileReference section */
 		82023A221D72938600B09032 /* RxSwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82023A251D72938600B09032 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		82023A271D72938600B09032 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		82023A271D72938600B09032 /* CreatePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordViewController.swift; sourceTree = "<group>"; };
 		82023A2A1D72938600B09032 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		82023A2C1D72938600B09032 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82023A2F1D72938600B09032 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +50,9 @@
 		82023A411D72938600B09032 /* RxSwiftExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxSwiftExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		82023A451D72938600B09032 /* RxSwiftExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftExampleUITests.swift; sourceTree = "<group>"; };
 		82023A471D72938600B09032 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82023A531D729F7100B09032 /* NextButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
+		82023A551D729FA000B09032 /* UITextField+RxSwiftExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+RxSwiftExample.swift"; sourceTree = "<group>"; };
+		82023A571D72A71600B09032 /* CreatePasswordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePasswordViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +104,10 @@
 			isa = PBXGroup;
 			children = (
 				82023A251D72938600B09032 /* AppDelegate.swift */,
-				82023A271D72938600B09032 /* ViewController.swift */,
+				82023A271D72938600B09032 /* CreatePasswordViewController.swift */,
+				82023A571D72A71600B09032 /* CreatePasswordViewModel.swift */,
+				82023A551D729FA000B09032 /* UITextField+RxSwiftExample.swift */,
+				82023A531D729F7100B09032 /* NextButton.swift */,
 				82023A291D72938600B09032 /* Main.storyboard */,
 				82023A2C1D72938600B09032 /* Assets.xcassets */,
 				82023A2E1D72938600B09032 /* LaunchScreen.storyboard */,
@@ -193,6 +202,7 @@
 				TargetAttributes = {
 					82023A211D72938600B09032 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 24Q7YD9VLQ;
 					};
 					82023A351D72938600B09032 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -256,7 +266,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82023A281D72938600B09032 /* ViewController.swift in Sources */,
+				82023A541D729F7100B09032 /* NextButton.swift in Sources */,
+				82023A281D72938600B09032 /* CreatePasswordViewController.swift in Sources */,
+				82023A561D729FA000B09032 /* UITextField+RxSwiftExample.swift in Sources */,
+				82023A581D72A71600B09032 /* CreatePasswordViewModel.swift in Sources */,
 				82023A261D72938600B09032 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +414,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = RxSwiftExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JustineKay.RxSwiftExample;
@@ -412,6 +426,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = RxSwiftExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JustineKay.RxSwiftExample;
