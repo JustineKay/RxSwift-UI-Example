@@ -20,10 +20,12 @@ class CreatePasswordViewController: UIViewController {
     private let kTransformScale: CGFloat = 1.1
     private let kOriginalScale: CGFloat = 1.0
     
+    private var keyboardMGR: KeyboardManager?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTextFields()
-        setUpKeyboardNotifications()
+        setUpKeyboardManager()
     }
     
     private func setUpTextFields() {
@@ -31,55 +33,19 @@ class CreatePasswordViewController: UIViewController {
         confirmPasswordTextField.inputFieldStyle()
     }
     
-    // MARK: - UITextField / Keyboard
+    // MARK: - KeyboardManager
     
-    private func setUpKeyboardNotifications() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.keyboardWillShow(_: )), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.keyboardWillHide(_: )), name: UIKeyboardWillHideNotification, object: nil)
+    private func setUpKeyboardManager() {
+        keyboardMGR = KeyboardManager { keyboardHeight in
+            self.animateNextButtonWithKeyboardHeight(keyboardHeight)
+        }
     }
     
-    func keyboardWillShow(notification: NSNotification) {
-        let userInfo: NSDictionary = notification.userInfo!
-        let keyboardFrame: NSValue = userInfo.valueForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue
-        let keyboardRect = keyboardFrame.CGRectValue()
-        animateKeyboardWillShow(keyboardRect.height)
-    }
+    // MARK: - Animation
     
-    func keyboardWillHide(notification: NSNotification) {
-        animateKeyboardWillHide()
-    }
-
-    // MARK: - Animations
-    
-    private func animateKeyboardWillShow(height: CGFloat) {
-        UIView.animateWithDuration(2.0, delay: 0, options: .CurveEaseInOut, animations: {
+    private func animateNextButtonWithKeyboardHeight(height: CGFloat) {
+        UIView.animateWithDuration(1.5) {
             self.nextButtonBottomConstraint.constant = height
-        }) { _ in
-            self.pulseAnimation()
-        }
-    }
-    
-    private func animateKeyboardWillHide() {
-        UIView.animateWithDuration(2.0, delay: 0, options: .CurveEaseInOut, animations: {
-            self.nextButtonBottomConstraint.constant = 0
-        }) { _ in
-            self.pulseAnimation()
-        }
-    }
-    
-    private func pulseAnimation() {
-        UIView.animateWithDuration(
-            0.25,
-            animations: {
-                self.nextButton.transform = CGAffineTransformMakeScale(self.kTransformScale, self.kTransformScale)
-        }) { _ in
-            UIView.animateWithDuration(
-                0.25,
-                animations: {
-                    self.nextButton.transform = CGAffineTransformMakeScale(self.kOriginalScale, self.kOriginalScale)
-                }, completion: nil
-            )
         }
     }
 }
-
