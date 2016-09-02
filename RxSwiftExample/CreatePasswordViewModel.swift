@@ -13,9 +13,9 @@ import RxCocoa
 final class CreatePasswordViewModel: NSObject {
     
     let password = Variable("")
-    let passwordIsValid = Variable(false)
     let passwordConfirmation = Variable("")
     var passwordIsMinLength = Variable(false)
+    var passwordMinLengthCheckboxHidden = Variable(true)
     
     let passwordMinLength = 8
     let disposeBag = DisposeBag()
@@ -33,7 +33,7 @@ final class CreatePasswordViewModel: NSObject {
             .addDisposableTo(disposeBag)
         
         password.asObservable().subscribeNext() { password in
-            self.passwordIsValid.value = password.isEmpty == false
+            self.passwordMinLengthCheckboxHidden.value = password.characters.count < self.passwordMinLength
             }
             .addDisposableTo(disposeBag)
     }
