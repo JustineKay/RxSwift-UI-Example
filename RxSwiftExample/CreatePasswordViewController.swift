@@ -14,8 +14,17 @@ class CreatePasswordViewController: UIViewController {
 
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
+    
     @IBOutlet weak var passwordMinLabel: UILabel!
+    @IBOutlet weak var passwordMinCheckboxView: UIImageView!
+    @IBOutlet weak var passwordMinCheckboxWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var passwordMinCheckboxLeadingConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var passwordsMatchLabel: UILabel!
+    @IBOutlet weak var passwordsMatchCheckboxView: UIImageView!
+    @IBOutlet weak var passwordsMatchWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var passwordsMatchLeadingConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var nextButton: NextButton!
     @IBOutlet weak var nextButtonBottomConstraint: NSLayoutConstraint!
     
@@ -32,6 +41,8 @@ class CreatePasswordViewController: UIViewController {
         setUpKeyboardManager()
         bindToViewModel()
         setUpTextFieldNotifications()
+        configureMinLengthCheckboxConstraints()
+        configurePasswordsMatchCheckboxConstraints()
     }
     
     private func setUpTextFields() {
@@ -51,16 +62,17 @@ class CreatePasswordViewController: UIViewController {
             .addDisposableTo(viewModel.disposeBag)
 
         if let observable = viewModel.passwordsMatchObservable {
-            Observable.combineLatest(viewModel.passwordIsMinLength.asObservable(), observable) { $0 && $1 }.bindTo(nextButton.rx_enabled)
-            .addDisposableTo(viewModel.disposeBag)
+            Observable.combineLatest(viewModel.passwordIsMinLength.asObservable(), observable) { $0 && $1 }
+                .bindTo(nextButton.rx_enabled)
+                .addDisposableTo(viewModel.disposeBag)
             
-            observable
-            .bindTo(passwordsMatchLabel.rx_hidden)
-            .addDisposableTo(viewModel.disposeBag)
+            Observable.combineLatest(viewModel.passwordIsMinLength.asObservable(), observable) { !($0 && $1) }
+                .bindTo(passwordsMatchCheckboxView.rx_hidden)
+                .addDisposableTo(viewModel.disposeBag)
         }
         
-        viewModel.passwordIsMinLength.asObservable()
-            .bindTo(passwordMinLabel.rx_hidden)
+        viewModel.passwordMinLengthCheckboxHidden.asObservable()
+            .bindTo(passwordMinCheckboxView.rx_hidden)
             .addDisposableTo(viewModel.disposeBag)
     }
     
@@ -73,21 +85,21 @@ class CreatePasswordViewController: UIViewController {
     }
     
     func passwordTextFieldEditingChanged() {
-        if let text = confirmPasswordTextField.text {
-            if passwordMinLabel.hidden && !text.isEmpty {
-                passwordsMatchLabel.hidden = passwordTextField.text == confirmPasswordTextField.text
-            } else if   text.isEmpty {
-                passwordsMatchLabel.hidden = true
-            } else {
-                passwordsMatchLabel.hidden = !passwordMinLabel.hidden
-            }
-        }
+        configureMinLengthCheckboxConstraints()
     }
     
     func confirmationTextFieldEditingChanged() {
-        if passwordMinLabel.hidden {
-            passwordsMatchLabel.hidden = passwordTextField.text == confirmPasswordTextField.text
-        }
+        configurePasswordsMatchCheckboxConstraints()
+    }
+    
+    private func configureMinLengthCheckboxConstraints() {
+        passwordMinCheckboxWidthConstraint.constant = passwordMinCheckboxView.hidden ? 0 : 19.5
+        passwordMinCheckboxLeadingConstraint.constant = passwordMinCheckboxView.hidden ? 0 : 12
+    }
+    
+    private func configurePasswordsMatchCheckboxConstraints() {
+        passwordsMatchWidthConstraint.constant = passwordsMatchCheckboxView.hidden ? 0 : 19.5
+        passwordsMatchLeadingConstraint.constant = passwordsMatchCheckboxView.hidden ? 0 : 12
     }
 
     

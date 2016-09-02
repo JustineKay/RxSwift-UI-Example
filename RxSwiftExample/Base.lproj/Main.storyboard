@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7Nt-ci-BsR">
-                                <rect key="frame" x="20" y="220.5" width="560" height="20"/>
+                                <rect key="frame" x="20" y="220" width="560" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="ucG-jn-NGV"/>
                                 </constraints>
@@ -27,25 +27,40 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bp8-i0-c5F">
-                                <rect key="frame" x="20" y="270.5" width="560" height="20"/>
+                                <rect key="frame" x="20" y="270" width="560" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="CCo-Fq-OPu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password Must Be 8 Characters Minimum" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E95-FQ-MDV">
-                                <rect key="frame" x="25" y="310.5" width="550" height="19.5"/>
-                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passwords Do Not Match" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdp-o1-AcM">
-                                <rect key="frame" x="20" y="310.5" width="560" height="19.5"/>
-                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IYI-oW-hDb" userLabel="PasswordMinLengthBkrdView">
+                                <rect key="frame" x="152.5" y="310" width="295" height="19.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password Must Be 8 Characters Minimum" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E95-FQ-MDV">
+                                        <rect key="frame" x="0.0" y="0.0" width="263.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ok-icon" translatesAutoresizingMaskIntoConstraints="NO" id="EMy-bb-dmx">
+                                        <rect key="frame" x="275.5" y="0.0" width="19.5" height="19.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="19.5" id="iIH-gY-f4a"/>
+                                            <constraint firstAttribute="width" secondItem="EMy-bb-dmx" secondAttribute="height" multiplier="1:1" id="tdh-65-fJV"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="EMy-bb-dmx" firstAttribute="top" secondItem="E95-FQ-MDV" secondAttribute="top" id="EEp-z5-JcG"/>
+                                    <constraint firstItem="EMy-bb-dmx" firstAttribute="leading" secondItem="E95-FQ-MDV" secondAttribute="trailing" constant="12" id="SPk-wU-Hve"/>
+                                    <constraint firstAttribute="bottom" secondItem="E95-FQ-MDV" secondAttribute="bottom" id="VIx-bY-3mA"/>
+                                    <constraint firstAttribute="trailing" secondItem="EMy-bb-dmx" secondAttribute="trailing" id="fkh-1j-9cz"/>
+                                    <constraint firstItem="E95-FQ-MDV" firstAttribute="top" secondItem="IYI-oW-hDb" secondAttribute="top" id="o2t-Pe-Ao4"/>
+                                    <constraint firstItem="E95-FQ-MDV" firstAttribute="leading" secondItem="IYI-oW-hDb" secondAttribute="leading" id="sob-3G-aEn"/>
+                                </constraints>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock-icon" translatesAutoresizingMaskIntoConstraints="NO" id="zAx-k0-ukE">
                                 <rect key="frame" x="250" y="45" width="100" height="100"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -55,7 +70,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Password" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAM-P5-gv9">
-                                <rect key="frame" x="233.5" y="162" width="134" height="23.5"/>
+                                <rect key="frame" x="233" y="162" width="134" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
                                 <color key="textColor" red="0.96078431369999995" green="0.84313725490000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -68,37 +83,76 @@
                                     <color key="titleColor" red="0.58039215690000001" green="0.043137254899999998" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tpy-km-qYD" userLabel="PasswordsMatchBkgrdView">
+                                <rect key="frame" x="211.5" y="337.5" width="177.5" height="19.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passwords Must Match" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdp-o1-AcM">
+                                        <rect key="frame" x="0.0" y="0.0" width="146" height="19.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ok-icon" translatesAutoresizingMaskIntoConstraints="NO" id="KTD-jm-PeT">
+                                        <rect key="frame" x="158" y="0.0" width="19.5" height="19.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="KTD-jm-PeT" secondAttribute="height" multiplier="1:1" id="DTK-qd-65p"/>
+                                            <constraint firstAttribute="width" constant="19.5" id="jlK-9S-3wd"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="KTD-jm-PeT" secondAttribute="trailing" id="9cq-l8-rks"/>
+                                    <constraint firstAttribute="bottom" secondItem="Sdp-o1-AcM" secondAttribute="bottom" id="Knq-LK-fyv"/>
+                                    <constraint firstItem="Sdp-o1-AcM" firstAttribute="leading" secondItem="Tpy-km-qYD" secondAttribute="leading" id="U1B-ds-e3k"/>
+                                    <constraint firstItem="KTD-jm-PeT" firstAttribute="top" secondItem="Sdp-o1-AcM" secondAttribute="top" id="hXG-9K-0XW"/>
+                                    <constraint firstItem="KTD-jm-PeT" firstAttribute="leading" secondItem="Sdp-o1-AcM" secondAttribute="trailing" constant="12" id="pJx-Wx-qs5"/>
+                                    <constraint firstItem="Sdp-o1-AcM" firstAttribute="top" secondItem="Tpy-km-qYD" secondAttribute="top" id="uFN-FV-9LJ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.58039215690000001" green="0.043137254899999998" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="dqK-tn-OMU" secondAttribute="trailing" id="7p6-tv-eXc"/>
-                            <constraint firstItem="E95-FQ-MDV" firstAttribute="trailing" secondItem="bp8-i0-c5F" secondAttribute="trailing" constant="-5" id="7rj-UG-ftq"/>
+                            <constraint firstItem="Tpy-km-qYD" firstAttribute="top" secondItem="IYI-oW-hDb" secondAttribute="bottom" constant="8" id="C3Z-iK-uKP"/>
                             <constraint firstItem="bp8-i0-c5F" firstAttribute="top" secondItem="7Nt-ci-BsR" secondAttribute="bottom" constant="30" id="Fxm-9t-myR"/>
                             <constraint firstItem="zAx-k0-ukE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="HEU-jS-Ytt"/>
                             <constraint firstItem="bp8-i0-c5F" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="I2g-19-qNv"/>
+                            <constraint firstItem="Tpy-km-qYD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mhb-Jm-YW8"/>
+                            <constraint firstAttribute="trailing" secondItem="IYI-oW-hDb" secondAttribute="trailing" constant="20" id="Muz-3V-QEE"/>
+                            <constraint firstItem="IYI-oW-hDb" firstAttribute="top" secondItem="bp8-i0-c5F" secondAttribute="bottom" constant="20" id="Sp0-0s-l8F"/>
                             <constraint firstItem="lAM-P5-gv9" firstAttribute="centerX" secondItem="zAx-k0-ukE" secondAttribute="centerX" id="Vr2-kK-P8o"/>
+                            <constraint firstItem="IYI-oW-hDb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W9G-s6-dhL"/>
                             <constraint firstAttribute="trailing" secondItem="7Nt-ci-BsR" secondAttribute="trailing" constant="20" id="b3b-fM-yFZ"/>
                             <constraint firstAttribute="trailing" secondItem="bp8-i0-c5F" secondAttribute="trailing" constant="20" id="bPd-W5-TXf"/>
-                            <constraint firstItem="E95-FQ-MDV" firstAttribute="top" secondItem="bp8-i0-c5F" secondAttribute="bottom" constant="20" id="e2c-Vj-jGC"/>
                             <constraint firstItem="7Nt-ci-BsR" firstAttribute="top" secondItem="lAM-P5-gv9" secondAttribute="bottom" constant="35" id="gPK-hj-02t"/>
-                            <constraint firstItem="Sdp-o1-AcM" firstAttribute="top" secondItem="bp8-i0-c5F" secondAttribute="bottom" constant="20" id="gwO-q5-IeE"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dqK-tn-OMU" secondAttribute="bottom" id="kxj-qy-vaM"/>
                             <constraint firstItem="7Nt-ci-BsR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="mmv-PD-EXg"/>
                             <constraint firstItem="lAM-P5-gv9" firstAttribute="top" secondItem="zAx-k0-ukE" secondAttribute="bottom" constant="17" id="ox9-Et-nzS"/>
-                            <constraint firstItem="E95-FQ-MDV" firstAttribute="leading" secondItem="bp8-i0-c5F" secondAttribute="leading" constant="5" id="qyV-OW-hYy"/>
-                            <constraint firstItem="Sdp-o1-AcM" firstAttribute="leading" secondItem="bp8-i0-c5F" secondAttribute="leading" id="sXY-YN-Aii"/>
+                            <constraint firstItem="IYI-oW-hDb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="pMr-kO-ZUD"/>
                             <constraint firstItem="zAx-k0-ukE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="t4R-7Z-BRl"/>
                             <constraint firstItem="dqK-tn-OMU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wqo-Eq-aRs"/>
-                            <constraint firstItem="Sdp-o1-AcM" firstAttribute="trailing" secondItem="bp8-i0-c5F" secondAttribute="trailing" id="yuz-Tt-k1x"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Muz-3V-QEE"/>
+                                <exclude reference="pMr-kO-ZUD"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="confirmPasswordTextField" destination="bp8-i0-c5F" id="dGT-8N-DmW"/>
                         <outlet property="nextButton" destination="dqK-tn-OMU" id="jQb-U3-vka"/>
                         <outlet property="nextButtonBottomConstraint" destination="kxj-qy-vaM" id="wHn-Mf-pDo"/>
+                        <outlet property="passwordMinCheckboxLeadingConstraint" destination="SPk-wU-Hve" id="zhM-0v-hcN"/>
+                        <outlet property="passwordMinCheckboxView" destination="EMy-bb-dmx" id="oHV-Nx-x29"/>
+                        <outlet property="passwordMinCheckboxWidthConstraint" destination="iIH-gY-f4a" id="OkM-hB-xGK"/>
                         <outlet property="passwordMinLabel" destination="E95-FQ-MDV" id="tcn-Ns-tcp"/>
                         <outlet property="passwordTextField" destination="7Nt-ci-BsR" id="sAF-3g-RM8"/>
+                        <outlet property="passwordsMatchCheckboxView" destination="KTD-jm-PeT" id="Iz5-Kx-zP0"/>
                         <outlet property="passwordsMatchLabel" destination="Sdp-o1-AcM" id="whO-ql-LUT"/>
+                        <outlet property="passwordsMatchLeadingConstraint" destination="pJx-Wx-qs5" id="Pit-vJ-9W3"/>
+                        <outlet property="passwordsMatchWidthConstraint" destination="jlK-9S-3wd" id="I9I-6v-rQw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -108,5 +162,6 @@
     </scenes>
     <resources>
         <image name="lock-icon" width="256" height="256"/>
+        <image name="ok-icon" width="256" height="256"/>
     </resources>
 </document>
