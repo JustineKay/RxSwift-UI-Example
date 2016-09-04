@@ -17,6 +17,7 @@
 		82023A541D729F7100B09032 /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82023A531D729F7100B09032 /* NextButton.swift */; };
 		82023A561D729FA000B09032 /* UITextField+RxSwiftExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82023A551D729FA000B09032 /* UITextField+RxSwiftExample.swift */; };
 		82023A581D72A71600B09032 /* CreatePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82023A571D72A71600B09032 /* CreatePasswordViewModel.swift */; };
+		822A83F91D7CBADB0043D1D6 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822A83F81D7CBADB0043D1D6 /* ScreenSize.swift */; };
 		823D3B791D72AA3B00624F15 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823D3B781D72AA3B00624F15 /* KeyboardManager.swift */; };
 		BE40B6EF48800646BE6346A3 /* Pods_RxSwiftExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D11DD8BAEB231B7886BEEDB1 /* Pods_RxSwiftExample.framework */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		82023A531D729F7100B09032 /* NextButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
 		82023A551D729FA000B09032 /* UITextField+RxSwiftExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+RxSwiftExample.swift"; sourceTree = "<group>"; };
 		82023A571D72A71600B09032 /* CreatePasswordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePasswordViewModel.swift; sourceTree = "<group>"; };
+		822A83F81D7CBADB0043D1D6 /* ScreenSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
 		823D3B781D72AA3B00624F15 /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		B8711FFBB4C759BA569256CC /* Pods-RxSwiftExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftExample/Pods-RxSwiftExample.debug.xcconfig"; sourceTree = "<group>"; };
 		D11DD8BAEB231B7886BEEDB1 /* Pods_RxSwiftExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +117,7 @@
 				82023A251D72938600B09032 /* AppDelegate.swift */,
 				82023A271D72938600B09032 /* CreatePasswordViewController.swift */,
 				82023A571D72A71600B09032 /* CreatePasswordViewModel.swift */,
+				822A83F81D7CBADB0043D1D6 /* ScreenSize.swift */,
 				823D3B781D72AA3B00624F15 /* KeyboardManager.swift */,
 				82023A551D729FA000B09032 /* UITextField+RxSwiftExample.swift */,
 				82023A531D729F7100B09032 /* NextButton.swift */,
@@ -348,6 +351,7 @@
 				82023A281D72938600B09032 /* CreatePasswordViewController.swift in Sources */,
 				823D3B791D72AA3B00624F15 /* KeyboardManager.swift in Sources */,
 				82023A561D729FA000B09032 /* UITextField+RxSwiftExample.swift in Sources */,
+				822A83F91D7CBADB0043D1D6 /* ScreenSize.swift in Sources */,
 				82023A581D72A71600B09032 /* CreatePasswordViewModel.swift in Sources */,
 				82023A261D72938600B09032 /* AppDelegate.swift in Sources */,
 			);

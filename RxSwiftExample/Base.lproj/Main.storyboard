@@ -18,8 +18,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock-icon" translatesAutoresizingMaskIntoConstraints="NO" id="zAx-k0-ukE">
+                                <rect key="frame" x="250" y="45" width="100" height="100"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Cc7-XG-4n8"/>
+                                    <constraint firstAttribute="width" secondItem="zAx-k0-ukE" secondAttribute="height" multiplier="1:1" id="s4p-OI-5xs"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Password" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAM-P5-gv9">
+                                <rect key="frame" x="233" y="162.5" width="134" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="0.96078431369999995" green="0.84313725490000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7Nt-ci-BsR">
-                                <rect key="frame" x="20" y="220" width="560" height="20"/>
+                                <rect key="frame" x="20" y="221" width="560" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="ucG-jn-NGV"/>
                                 </constraints>
@@ -27,7 +41,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bp8-i0-c5F">
-                                <rect key="frame" x="20" y="270" width="560" height="20"/>
+                                <rect key="frame" x="20" y="271" width="560" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="CCo-Fq-OPu"/>
                                 </constraints>
@@ -35,7 +49,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IYI-oW-hDb" userLabel="PasswordMinLengthBkrdView">
-                                <rect key="frame" x="152.5" y="310" width="295" height="19.5"/>
+                                <rect key="frame" x="152.5" y="311" width="295" height="19.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password Must Be 8 Characters Minimum" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E95-FQ-MDV">
                                         <rect key="frame" x="0.0" y="0.0" width="263.5" height="19.5"/>
@@ -61,30 +75,8 @@
                                     <constraint firstItem="E95-FQ-MDV" firstAttribute="leading" secondItem="IYI-oW-hDb" secondAttribute="leading" id="sob-3G-aEn"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock-icon" translatesAutoresizingMaskIntoConstraints="NO" id="zAx-k0-ukE">
-                                <rect key="frame" x="250" y="45" width="100" height="100"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="Lv2-KE-I4i"/>
-                                    <constraint firstAttribute="width" secondItem="zAx-k0-ukE" secondAttribute="height" multiplier="1:1" id="s4p-OI-5xs"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Password" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAM-P5-gv9">
-                                <rect key="frame" x="233" y="162" width="134" height="23.5"/>
-                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
-                                <color key="textColor" red="0.96078431369999995" green="0.84313725490000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqK-tn-OMU" customClass="NextButton" customModule="RxSwiftExample" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="557" width="600" height="43"/>
-                                <color key="backgroundColor" red="0.96078431369999995" green="0.84313725490000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="22"/>
-                                <state key="normal" title="NEXT">
-                                    <color key="titleColor" red="0.58039215690000001" green="0.043137254899999998" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tpy-km-qYD" userLabel="PasswordsMatchBkgrdView">
-                                <rect key="frame" x="211.5" y="337.5" width="177.5" height="19.5"/>
+                                <rect key="frame" x="211.5" y="338.5" width="177.5" height="19.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passwords Must Match" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdp-o1-AcM">
                                         <rect key="frame" x="0.0" y="0.0" width="146" height="19.5"/>
@@ -110,6 +102,14 @@
                                     <constraint firstItem="Sdp-o1-AcM" firstAttribute="top" secondItem="Tpy-km-qYD" secondAttribute="top" id="uFN-FV-9LJ"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqK-tn-OMU" customClass="NextButton" customModule="RxSwiftExample" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="557" width="600" height="43"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.84313725490000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="22"/>
+                                <state key="normal" title="NEXT">
+                                    <color key="titleColor" red="0.58039215690000001" green="0.043137254899999998" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.58039215690000001" green="0.043137254899999998" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -119,7 +119,6 @@
                             <constraint firstItem="zAx-k0-ukE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="HEU-jS-Ytt"/>
                             <constraint firstItem="bp8-i0-c5F" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="I2g-19-qNv"/>
                             <constraint firstItem="Tpy-km-qYD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mhb-Jm-YW8"/>
-                            <constraint firstAttribute="trailing" secondItem="IYI-oW-hDb" secondAttribute="trailing" constant="20" id="Muz-3V-QEE"/>
                             <constraint firstItem="IYI-oW-hDb" firstAttribute="top" secondItem="bp8-i0-c5F" secondAttribute="bottom" constant="20" id="Sp0-0s-l8F"/>
                             <constraint firstItem="lAM-P5-gv9" firstAttribute="centerX" secondItem="zAx-k0-ukE" secondAttribute="centerX" id="Vr2-kK-P8o"/>
                             <constraint firstItem="IYI-oW-hDb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W9G-s6-dhL"/>
@@ -129,30 +128,25 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dqK-tn-OMU" secondAttribute="bottom" id="kxj-qy-vaM"/>
                             <constraint firstItem="7Nt-ci-BsR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="mmv-PD-EXg"/>
                             <constraint firstItem="lAM-P5-gv9" firstAttribute="top" secondItem="zAx-k0-ukE" secondAttribute="bottom" constant="17" id="ox9-Et-nzS"/>
-                            <constraint firstItem="IYI-oW-hDb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="pMr-kO-ZUD"/>
                             <constraint firstItem="zAx-k0-ukE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="t4R-7Z-BRl"/>
                             <constraint firstItem="dqK-tn-OMU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wqo-Eq-aRs"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Muz-3V-QEE"/>
-                                <exclude reference="pMr-kO-ZUD"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="confirmPasswordTextField" destination="bp8-i0-c5F" id="dGT-8N-DmW"/>
+                        <outlet property="createPasswordLabelTopConstraint" destination="ox9-Et-nzS" id="oCs-1q-VU9"/>
+                        <outlet property="lockIconTopConstraint" destination="HEU-jS-Ytt" id="bbm-zt-PdK"/>
+                        <outlet property="lockIconWidthConstraint" destination="Cc7-XG-4n8" id="BO1-j5-beF"/>
                         <outlet property="nextButton" destination="dqK-tn-OMU" id="jQb-U3-vka"/>
                         <outlet property="nextButtonBottomConstraint" destination="kxj-qy-vaM" id="wHn-Mf-pDo"/>
-                        <outlet property="passwordMinCheckboxLeadingConstraint" destination="SPk-wU-Hve" id="zhM-0v-hcN"/>
-                        <outlet property="passwordMinCheckboxView" destination="EMy-bb-dmx" id="oHV-Nx-x29"/>
-                        <outlet property="passwordMinCheckboxWidthConstraint" destination="iIH-gY-f4a" id="OkM-hB-xGK"/>
-                        <outlet property="passwordMinLabel" destination="E95-FQ-MDV" id="tcn-Ns-tcp"/>
+                        <outlet property="passwordMinCheckmark" destination="EMy-bb-dmx" id="dCI-9S-SNG"/>
+                        <outlet property="passwordMinCheckmarkLeadingConstraint" destination="SPk-wU-Hve" id="6Py-M1-NFO"/>
+                        <outlet property="passwordMinCheckmarkWidthConstraint" destination="iIH-gY-f4a" id="reV-tN-dDf"/>
                         <outlet property="passwordTextField" destination="7Nt-ci-BsR" id="sAF-3g-RM8"/>
-                        <outlet property="passwordsMatchCheckboxView" destination="KTD-jm-PeT" id="Iz5-Kx-zP0"/>
-                        <outlet property="passwordsMatchLabel" destination="Sdp-o1-AcM" id="whO-ql-LUT"/>
-                        <outlet property="passwordsMatchLeadingConstraint" destination="pJx-Wx-qs5" id="Pit-vJ-9W3"/>
-                        <outlet property="passwordsMatchWidthConstraint" destination="jlK-9S-3wd" id="I9I-6v-rQw"/>
+                        <outlet property="passwordTextFieldTopConstraint" destination="gPK-hj-02t" id="WZr-5g-Jfh"/>
+                        <outlet property="passwordsMatchCheckmark" destination="KTD-jm-PeT" id="yWv-JQ-lX7"/>
+                        <outlet property="passwordsMatchCheckmarkLeadingConstraint" destination="pJx-Wx-qs5" id="6fJ-6l-GH8"/>
+                        <outlet property="passwordsMatchCheckmarkWidthConstraint" destination="jlK-9S-3wd" id="8PU-Un-ps3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

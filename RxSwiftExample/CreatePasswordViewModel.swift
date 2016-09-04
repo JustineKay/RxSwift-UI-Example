@@ -15,7 +15,7 @@ final class CreatePasswordViewModel: NSObject {
     let password = Variable("")
     let passwordConfirmation = Variable("")
     var passwordIsMinLength = Variable(false)
-    var passwordMinLengthCheckboxHidden = Variable(true)
+    var passwordMinCheckmarkHidden = Variable(true)
     
     let passwordMinLength = 8
     let disposeBag = DisposeBag()
@@ -33,7 +33,7 @@ final class CreatePasswordViewModel: NSObject {
             .addDisposableTo(disposeBag)
         
         password.asObservable().subscribeNext() { password in
-            self.passwordMinLengthCheckboxHidden.value = password.characters.count < self.passwordMinLength
+            self.passwordMinCheckmarkHidden.value = password.characters.count < self.passwordMinLength
             }
             .addDisposableTo(disposeBag)
     }

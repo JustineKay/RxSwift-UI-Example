@@ -15,21 +15,21 @@ class CreatePasswordViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
-    @IBOutlet weak var passwordMinLabel: UILabel!
-    @IBOutlet weak var passwordMinCheckboxView: UIImageView!
-    @IBOutlet weak var passwordMinCheckboxWidthConstraint: NSLayoutConstraint!
-    @IBOutlet weak var passwordMinCheckboxLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var passwordMinCheckmark: UIImageView!
+    @IBOutlet weak var passwordMinCheckmarkWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var passwordMinCheckmarkLeadingConstraint: NSLayoutConstraint!
     
-    @IBOutlet weak var passwordsMatchLabel: UILabel!
-    @IBOutlet weak var passwordsMatchCheckboxView: UIImageView!
-    @IBOutlet weak var passwordsMatchWidthConstraint: NSLayoutConstraint!
-    @IBOutlet weak var passwordsMatchLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var passwordsMatchCheckmark: UIImageView!
+    @IBOutlet weak var passwordsMatchCheckmarkWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var passwordsMatchCheckmarkLeadingConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var nextButton: NextButton!
     @IBOutlet weak var nextButtonBottomConstraint: NSLayoutConstraint!
     
-    private let kTransformScale: CGFloat = 1.1
-    private let kOriginalScale: CGFloat = 1.0
+    @IBOutlet weak var lockIconTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var lockIconWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var createPasswordLabelTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var passwordTextFieldTopConstraint: NSLayoutConstraint!
     
     private var keyboardMGR: KeyboardManager?
     let viewModel = CreatePasswordViewModel()
@@ -41,13 +41,29 @@ class CreatePasswordViewController: UIViewController {
         setUpKeyboardManager()
         bindToViewModel()
         setUpTextFieldNotifications()
-        configureMinLengthCheckboxConstraints()
-        configurePasswordsMatchCheckboxConstraints()
+        configurePasswordMinCheckmarkConstraints()
+        configurePasswordsMatchCheckmarkConstraints()
+        configureConstraintsForScreenSize()
     }
+    
+    // MARK: - UI
     
     private func setUpTextFields() {
         passwordTextField.inputFieldStyle()
         confirmPasswordTextField.inputFieldStyle()
+    }
+    
+    private func configureConstraintsForScreenSize() {
+        if ScreenSize.isIPhone4 {
+            lockIconTopConstraint.constant = 12
+            lockIconWidthConstraint.constant = 0
+            createPasswordLabelTopConstraint.constant = 0
+            passwordTextFieldTopConstraint.constant = 20
+        } else if ScreenSize.isIPhone5 {
+            lockIconWidthConstraint.constant = 50
+            createPasswordLabelTopConstraint.constant = 8
+            passwordTextFieldTopConstraint.constant = 25
+        }
     }
     
     // MARK: - Rx
@@ -67,39 +83,38 @@ class CreatePasswordViewController: UIViewController {
                 .addDisposableTo(viewModel.disposeBag)
             
             Observable.combineLatest(viewModel.passwordIsMinLength.asObservable(), observable) { !($0 && $1) }
-                .bindTo(passwordsMatchCheckboxView.rx_hidden)
+                .bindTo(passwordsMatchCheckmark.rx_hidden)
                 .addDisposableTo(viewModel.disposeBag)
         }
         
-        viewModel.passwordMinLengthCheckboxHidden.asObservable()
-            .bindTo(passwordMinCheckboxView.rx_hidden)
+        viewModel.passwordMinCheckmarkHidden.asObservable()
+            .bindTo(passwordMinCheckmark.rx_hidden)
             .addDisposableTo(viewModel.disposeBag)
     }
     
     // MARK: - UITextField Notifications
     
     private func setUpTextFieldNotifications() {
-        // TODO: - Rx-ify these
         confirmPasswordTextField.addTarget(self, action: #selector(CreatePasswordViewController.confirmationTextFieldEditingChanged), forControlEvents: UIControlEvents.EditingChanged)
         passwordTextField.addTarget(self, action: #selector(CreatePasswordViewController.passwordTextFieldEditingChanged), forControlEvents: UIControlEvents.EditingChanged)
     }
     
     func passwordTextFieldEditingChanged() {
-        configureMinLengthCheckboxConstraints()
+        configurePasswordMinCheckmarkConstraints()
     }
     
     func confirmationTextFieldEditingChanged() {
-        configurePasswordsMatchCheckboxConstraints()
+        configurePasswordsMatchCheckmarkConstraints()
     }
     
-    private func configureMinLengthCheckboxConstraints() {
-        passwordMinCheckboxWidthConstraint.constant = passwordMinCheckboxView.hidden ? 0 : 19.5
-        passwordMinCheckboxLeadingConstraint.constant = passwordMinCheckboxView.hidden ? 0 : 12
+    private func configurePasswordMinCheckmarkConstraints() {
+        passwordMinCheckmarkWidthConstraint.constant = passwordMinCheckmark.hidden ? 0 : 19.5
+        passwordMinCheckmarkLeadingConstraint.constant = passwordMinCheckmark.hidden ? 0 : 12
     }
     
-    private func configurePasswordsMatchCheckboxConstraints() {
-        passwordsMatchWidthConstraint.constant = passwordsMatchCheckboxView.hidden ? 0 : 19.5
-        passwordsMatchLeadingConstraint.constant = passwordsMatchCheckboxView.hidden ? 0 : 12
+    private func configurePasswordsMatchCheckmarkConstraints() {
+        passwordsMatchCheckmarkWidthConstraint.constant = passwordsMatchCheckmark.hidden ? 0 : 19.5
+        passwordsMatchCheckmarkLeadingConstraint.constant = passwordsMatchCheckmark.hidden ? 0 : 12
     }
 
     
